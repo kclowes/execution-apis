@@ -78,6 +78,7 @@
       message: Pruned history unavailable
   result:
     name: Receipts
+    description: An array of EIP-2718 binary-encoded receipt bytes for the block.
     schema:
       title: Receipt array
       type: array
@@ -122,6 +123,7 @@
   params: []
   result:
     name: Blocks
+    description: An array of recent bad blocks seen by the client on the network.
     schema:
       title: Bad block array
       type: array

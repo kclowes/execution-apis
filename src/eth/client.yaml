@@ -3,6 +3,7 @@
   params: []
   result:
     name: Chain ID
+    description: The chain ID as a hex-encoded integer.
     schema:
       $ref: '#/components/schemas/uint'
   examples:
@@ -16,6 +17,7 @@
   params: []
   result:
     name: Syncing status
+    description: An object with sync status data, or false if the client is not syncing.
     schema:
       $ref: '#/components/schemas/SyncingStatus'
   examples:

@@ -63,6 +63,7 @@
           - type: 'null'
   result:
     name: Response object
+    description: The built block's execution payload, block value, blobs bundle, and override flag.
     schema:
       title: Response object
       type: object

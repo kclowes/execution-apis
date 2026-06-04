@@ -12,6 +12,7 @@
           type: string
   result:
     name: Execution client methods
+    description: An array of Engine API method names supported by the execution client.
     schema:
       type: array
       items:

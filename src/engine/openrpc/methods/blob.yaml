@@ -1,5 +1,6 @@
 - name: engine_getBlobsV1
   summary: Fetches blobs from the blob pool
+  description: Fetches blobs and their KZG proofs from the execution layer blob pool given a list of versioned hashes.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/cancun.md#engine_getBlobsV1
@@ -12,6 +13,7 @@
           $ref: '#/components/schemas/hash32'
   result:
     name: List of blobs and proofs
+    description: An array of blob and KZG proof pairs corresponding to the requested versioned hashes.
     schema:
       type: array
       items:
@@ -35,6 +37,7 @@
 
 - name: engine_getBlobsV2
   summary: Fetch blobs from the blob mempool
+  description: Fetches blobs and their KZG cell proofs from the execution layer blob mempool given a list of versioned hashes.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/osaka.md#engine_getBlobsV2
@@ -47,6 +50,7 @@
           $ref: '#/components/schemas/hash32'
   result:
     name: List of blobs and corresponding cell proofs
+    description: An array of blob and cell proof pairs corresponding to the requested versioned hashes.
     schema:
       type: array
       items:
@@ -215,7 +219,7 @@
               - $ref: '#/components/schemas/BlobAndProofV2'
               - type: 'null'
         - type: 'null'
-  description: |
+  description: Fetches blobs and their KZG cell proofs from the execution layer blob mempool, returning partial hits with positional nulls for missing blobs.
   errors:
     - code: -38004
       message: Too large request
@@ -388,7 +392,7 @@
               - $ref: '#/components/schemas/BlobCellsAndProofsV1'
               - type: 'null'
         - type: 'null'
-  description: |
+  description: Retrieves blob cells and their proofs from the execution layer blobpool given versioned hashes and a cell indices bitarray.
   errors:
     - code: -38004
       message: Too large request

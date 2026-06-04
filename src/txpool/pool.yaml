@@ -7,6 +7,7 @@
   params: []
   result:
     name: Transaction pool status
+    description: An object containing the count of pending and queued transactions.
     schema:
       $ref: '#/components/schemas/TxpoolStatus'
   examples:
@@ -28,6 +29,7 @@
   params: []
   result:
     name: Transaction pool content
+    description: An object containing pending and queued transaction details grouped by address and nonce.
     schema:
       $ref: '#/components/schemas/TxpoolContent'
   examples:
@@ -77,6 +79,7 @@
         $ref: '#/components/schemas/address'
   result:
     name: Transaction pool content from address
+    description: An object containing pending and queued transactions from the specified address grouped by nonce.
     schema:
       $ref: '#/components/schemas/TxpoolContentFromResult'
   examples:

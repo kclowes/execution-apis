@@ -3,6 +3,7 @@
   params: []
   result:
     name: Gas price
+    description: The gas price in wei as a hex-encoded integer.
     schema:
       title: Gas price
       $ref: '#/components/schemas/uint'
@@ -17,6 +18,7 @@
   params: []
   result:
     name: Blob gas base fee
+    description: The blob base fee in wei as a hex-encoded integer.
     schema:
       title: Blob gas base fee
       $ref: '#/components/schemas/uint'
@@ -31,6 +33,7 @@
   params: []
   result:
     name: Max priority fee per gas
+    description: The max priority fee per gas in wei as a hex-encoded integer.
     schema:
       title: Max priority fee per gas
       $ref: '#/components/schemas/uint'

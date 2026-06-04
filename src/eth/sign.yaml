@@ -11,6 +11,7 @@
         $ref: '#/components/schemas/bytes'
   result:
     name: Signature
+    description: The 65-byte EIP-191 signature.
     schema:
       $ref: '#/components/schemas/bytes65'
   examples:

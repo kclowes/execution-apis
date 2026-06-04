@@ -78,6 +78,7 @@
         $ref: '#/components/schemas/BlockNumberOrTag'
   result:
     name: Gas used
+    description: An object containing the generated access list and estimated gas used.
     schema:
       title: Access list result
       type: object

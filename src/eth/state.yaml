@@ -11,6 +11,7 @@
         $ref: '#/components/schemas/BlockNumberOrTagOrHash'
   result:
     name: Balance
+    description: The balance in wei as a hex-encoded integer.
     schema:
       $ref: '#/components/schemas/uint'
   examples:
@@ -42,6 +43,7 @@
         $ref: '#/components/schemas/BlockNumberOrTagOrHash'
   result:
     name: Value
+    description: The storage value at the given position.
     schema:
       $ref: '#/components/schemas/bytes'
   examples:
@@ -75,6 +77,7 @@
         $ref: '#/components/schemas/BlockNumberOrTagOrHash'
   result:
     name: Values
+    description: A map of address to array of storage slot values.
     schema:
       title: Storage values
       type: object
@@ -173,6 +176,7 @@
         $ref: '#/components/schemas/BlockNumberOrTagOrHash'
   result:
     name: Account
+    description: An account proof object containing the account and storage proofs.
     schema:
       $ref: '#/components/schemas/AccountProof'
   examples:

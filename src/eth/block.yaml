@@ -179,6 +179,7 @@
         $ref: '#/components/schemas/BlockNumberOrTagOrHash'
   result:
     name: Receipts information
+    description: An array of transaction receipt objects for the block, or null if not found.
     schema:
       oneOf:
         - $ref: '#/components/schemas/notFound'

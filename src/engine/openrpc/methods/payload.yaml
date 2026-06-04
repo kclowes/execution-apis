@@ -1,5 +1,6 @@
 - name: engine_newPayloadV1
   summary: Runs execution payload validation
+  description: Validates the execution payload and returns the payload validation status.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/paris.md#engine_newpayloadv1
@@ -10,6 +11,7 @@
         $ref: '#/components/schemas/ExecutionPayloadV1'
   result:
     name: Payload status
+    description: The payload validation status including validity and optional validation error.
     schema:
       $ref: '#/components/schemas/PayloadStatusV1'
   examples:
@@ -63,6 +65,7 @@
           validationError: 'New payload is invalid'
 - name: engine_newPayloadV2
   summary: Runs execution payload validation
+  description: Validates the execution payload with withdrawals and returns the payload validation status.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/shanghai.md#engine_newpayloadv2
@@ -75,6 +78,7 @@
           - $ref: '#/components/schemas/ExecutionPayloadV2'
   result:
     name: Payload status
+    description: The payload validation status including validity and optional validation error.
     schema:
       $ref: '#/components/schemas/PayloadStatusNoInvalidBlockHash'
   errors:
@@ -121,6 +125,7 @@
           validationError: null
 - name: engine_newPayloadV3
   summary: Runs execution payload validation
+  description: Validates the execution payload with blob transactions and returns the payload validation status.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/cancun.md#engine_newpayloadv3
@@ -141,6 +146,7 @@
         $ref: '#/components/schemas/hash32'
   result:
     name: Payload status
+    description: The payload validation status including validity and optional validation error.
     schema:
       $ref: '#/components/schemas/PayloadStatusNoInvalidBlockHash'
   errors:
@@ -194,6 +200,7 @@
           validationError: null
 - name: engine_newPayloadV4
   summary: Runs execution payload validation
+  description: Validates the execution payload with execution requests and returns the payload validation status.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/prague.md#engine_newpayloadv4
@@ -220,6 +227,7 @@
           $ref: '#/components/schemas/bytes'
   result:
     name: Payload status
+    description: The payload validation status including validity and optional validation error.
     schema:
       $ref: '#/components/schemas/PayloadStatusNoInvalidBlockHash'
   errors:
@@ -327,6 +335,7 @@
         $ref: '#/components/schemas/bytes8'
   result:
     name: Response object
+    description: A response object containing the execution payload and block value.
     schema:
       type: object
       required:
@@ -384,6 +393,7 @@
           blockValue: '0x10a741a46278014d'
 - name: engine_getPayloadV3
   summary: Obtains execution payload from payload build process
+  description: Obtains an execution payload with blob transactions from the payload build process.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/cancun.md#engine_getpayloadv3
@@ -394,6 +404,7 @@
         $ref: '#/components/schemas/bytes8'
   result:
     name: Response object
+    description: A response object containing the execution payload, block value, blobs bundle, and override flag.
     schema:
       type: object
       required:
@@ -477,6 +488,7 @@
         $ref: '#/components/schemas/bytes8'
   result:
     name: Response object
+    description: A response object containing the execution payload, block value, blobs bundle, override flag, and execution requests.
     schema:
       type: object
       required:
@@ -560,6 +572,7 @@
             - '0x02a94f5374fce5edbc8e2a8697c15331677e6ebf0b85103a5617937691dfeeb89b86a80d5dc9e3c9d3a1a0e7ce311e26e0bb732eabaa47ffa288f0d54de28209a62a7d29d098daeed734da114470da559bd4b4c7259e1f7952555241dcbc90cf194a2ef676fc6005f3672fada2a3645edb297a7553'
 - name: engine_getPayloadV5
   summary: Obtains execution payload from payload build process
+  description: Obtains an execution payload with blob cells and cell proofs from the payload build process.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/osaka.md#engine_getpayloadv5
@@ -570,6 +583,7 @@
         $ref: '#/components/schemas/bytes8'
   result:
     name: Response object
+    description: A response object containing the execution payload, block value, blobs bundle with cell proofs, override flag, and execution requests.
     schema:
       type: object
       required:
@@ -792,6 +806,7 @@
           $ref: '#/components/schemas/hash32'
   result:
     name: Execution payload bodies
+    description: An array of execution payload bodies corresponding to the requested hashes.
     schema:
       type: array
       items:
@@ -849,6 +864,7 @@
         $ref: '#/components/schemas/uint64'
   result:
     name: Execution payload bodies
+    description: An array of execution payload bodies for the requested block range.
     schema:
       type: array
       items:
@@ -904,6 +920,7 @@
           $ref: '#/components/schemas/hash32'
   result:
     name: Execution payload bodies
+    description: An array of execution payload bodies including block access lists corresponding to the requested hashes.
     schema:
       type: array
       items:
@@ -939,6 +956,7 @@
             blockAccessList: null
 - name: engine_getPayloadBodiesByRangeV2
   summary: Given a range of block numbers returns bodies of the corresponding execution payloads including block access lists
+  description: Returns the bodies of execution payloads including block access lists for a range of block numbers.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/amsterdam.md#engine_getpayloadbodiesbyrangev2
@@ -953,6 +971,7 @@
         $ref: '#/components/schemas/uint64'
   result:
     name: Execution payload bodies
+    description: An array of execution payload bodies including block access lists for the requested block range.
     schema:
       type: array
       items:
@@ -988,6 +1007,7 @@
             blockAccessList: '0xf8daf8d8f8d6a000000000000000000000000000000000000000000000000000000000000000a0f8a7a05555555555555555555555555555555555555555555555555555555555555555a06666666666666666666666666666666666666666666666666666666666666666a07777777777777777777777777777777777777777777777777777777777777777'
 - name: engine_newPayloadV5
   summary: Runs execution payload validation
+  description: Validates the execution payload with PeerDAS cell proofs and returns the payload validation status.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/amsterdam.md#engine_newpayloadv5
@@ -1014,6 +1034,7 @@
           $ref: '#/components/schemas/bytes'
   result:
     name: Payload status
+    description: The payload validation status including validity and optional validation error.
     schema:
       $ref: '#/components/schemas/PayloadStatusNoInvalidBlockHash'
   errors:
@@ -1072,6 +1093,7 @@
           validationError: null
 - name: engine_getPayloadV6
   summary: Obtains execution payload from payload build process
+  description: Obtains an execution payload with PeerDAS cell proofs from the payload build process.
   externalDocs:
     description: Method specification
     url: https://github.com/ethereum/execution-apis/blob/main/src/engine/amsterdam.md#engine_getpayloadv6
@@ -1082,6 +1104,7 @@
         $ref: '#/components/schemas/bytes8'
   result:
     name: Response object
+    description: A response object containing the execution payload, block value, blobs bundle with cell proofs, override flag, and execution requests.
     schema:
       type: object
       required:
